@@ -6,7 +6,7 @@ favoriteFoods = ["Pumpkin Pie", "Tacos", "Cheese Burger", "Stuffed Peppers", "Ch
 
 
 // 2. Loop through the list and print: "One of my favorite foods is ______."
-
+console.log("");
 for (let i = 0; i < favoriteFoods.length; i++){
   console.log("One of my favorite foods is " + favoriteFoods[i] + ".");
 }
@@ -17,7 +17,7 @@ for (let i = 0; i < favoriteFoods.length; i++){
 // "My #1 favorite food is Ramen" (copy/paste for all items)
 // "My #2 favorite food is Sushi"
 // ...etc.
-
+console.log("");
 for (let i = 1; i <= favoriteFoods.length; i++){
   console.log("My #" + i + " favorite food is " + favoriteFoods[i-1]);
 }
@@ -28,7 +28,7 @@ for (let i = 1; i <= favoriteFoods.length; i++){
     // "Have you ever tried ____?"
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
-
+console.log("");
 function printFoodRecommendation(foodName){
   console.log("Have you ever tried " + foodName + "?");
   console.log("I always recommend " + foodName + " to friends.");
@@ -49,7 +49,8 @@ let friendFavorites = [
   ];
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
-
+console.log("");
+console.log("Foods that include 'a'.")
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].includes("a")){
     console.log(friendFavorites[i]);
@@ -58,12 +59,10 @@ for (let i = 0; i < friendFavorites.length; i++){
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
 
-
-
-
-
 // I'm very confused on how this was intended to be done, as this could be done many many different ways. I'm just
 // completing it this way. This way, it's printed out twice because I had to print out the result from the last question.
+console.log("");
+console.log("Foods that include 'a' again.")
 foodsWithA = []
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].includes("a")){
@@ -79,9 +78,9 @@ for (let i = 0; i < foodsWithA.length; i++){
 
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
-
+console.log("");
+console.log("Foods with names longer than 6 characters.");
 longFoodNames = []
-
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].length > 6){
     longFoodNames.push(friendFavorites[i]);
@@ -89,12 +88,41 @@ for (let i = 0; i < friendFavorites.length; i++){
 }
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
-
-
+console.log("");
+console.log("Foods with names 6 characters or shorter.");
+shortFoodNames = []
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].length <= 6){
+    shortFoodNames.push(friendFavorites[i]);
+  }
+}
 
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
+console.log("");
+console.log("Printing both arrays and comparing.");
+for (let i =  0; i < longFoodNames.length; i++){
+  console.log(longFoodNames[i]);
+}
+for (let i =  0; i < shortFoodNames.length; i++){
+  console.log(shortFoodNames[i]);
+}
 
+if (longFoodNames.length > shortFoodNames.length){
+  console.log("There are more long-named foods.");
+}
+else{
+  console.log("There are more short-named foods.");
+}
 
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+console.log("");
+console.log("Longest food name.");
+let longestFoodNameInList = 0;
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[longestFoodNameInList].length < friendFavorites[i].length){
+    longestFoodNameInList = i;
+  }
+}
+console.log("The Longest food name in the list is " + friendFavorites[longestFoodNameInList] + " with " + friendFavorites[longestFoodNameInList].length + " characters.");
